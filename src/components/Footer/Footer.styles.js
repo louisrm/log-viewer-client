@@ -9,7 +9,6 @@ export const Content = styled.div`
         color: var(--green);
         position: absolute;
         bottom: 0;
-        width: 100%;
         margin-left: 2em;
     }
 `;

@@ -1,4 +1,6 @@
 import React from 'react';
+// import Plot from 'react-plotly.js';
+
 
 // Routing 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -11,6 +13,7 @@ import NotFound from './components/NotFound';
 
 // Styles 
 import { GlobalStyle } from './GlobalStyle'
+import DataContainer from './components/DataContainer';
 
 function App() {
   return(
@@ -18,9 +21,10 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/data' element={<DataContainer />} />
         <Route path='/*' element={<NotFound />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
       <GlobalStyle />
     </Router>
   )

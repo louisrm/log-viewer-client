@@ -7,7 +7,7 @@ const Header = () => (
         <Content>
             <a href="https://github.com/louisrm/log-viewer-client">contribute</a>
             <a href='https://www.linkedin.com/in/louismueller/'>
-                <i class="fab fa-linkedin"></i>
+                <i className="fab fa-linkedin"></i>
             </a>
         </Content>
     </Wrapper>

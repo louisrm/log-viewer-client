@@ -1,5 +1,7 @@
-
 import React,{useState,useEffect} from 'react';
+import Plot from 'react-plotly.js';
+import Graph from '../OverviewGraph';
+
 
 const DataContainer = () => {
 
@@ -25,6 +27,9 @@ const DataContainer = () => {
 
     return (
     <div>
+
+        <Graph></Graph>
+
         {(typeof data.STATUSTEXT === 'undefined') ? (
         <p>Loading...</p> 
         ) : (

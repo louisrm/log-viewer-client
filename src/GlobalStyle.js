@@ -15,15 +15,13 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     * {
-        box-sizing: border-box;
         font-family: 'IBM Plex Mono', monospace;
-        background-color: var(--lightGray);
     }
 
     body {
         margin: 0;
         padding: 0;
-        background-color: var(--green);
+        background-color: var(--lightGray);
 
         h1 {
             font-size: 5rem;
