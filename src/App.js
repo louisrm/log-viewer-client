@@ -1,45 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+
+// Routing 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+// Components
+import Header from './components/Header';
+import Home from './components/Home';
+import Footer from './components/Footer';
+import NotFound from './components/NotFound';
+
+// Styles 
+import { GlobalStyle } from './GlobalStyle'
 
 function App() {
-
-  const [data, setData] = useState({})
-
-  useEffect(() => {
-    fetch("/members",{
-      headers : { 
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-     }
-    }).then(
-      res => res.json()
-    ).then(
-      data => {
-        setData(data)
-        console.log(data)
-      }
-    )
-    
-  }, [])
-  
-
-  return (
-    <div>
-      {(typeof data.STATUSTEXT === 'undefined') ? (
-        <p>Loading...</p> 
-      ) : (
-        Object.keys(data).map((member, i) => (
-          <p key={i}>{member}</p>
-        ))
-      )}
-     
-      {(typeof data.STATUSTEXT === 'undefined') ? (
-        <p>Loading...</p>
-      ) : (
-        data.STATUSTEXT.text.map((member, i) => (
-          <p key={i}>{member}</p>
-        )))
-      }
-    </div>
+  return(
+    <Router>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/*' element={<NotFound />} />
+      </Routes>
+      <Footer />
+      <GlobalStyle />
+    </Router>
   )
 }
 
