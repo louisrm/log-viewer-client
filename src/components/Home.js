@@ -1,15 +1,14 @@
 import React,{useState,useEffect} from 'react';
-import DataContainer from './DataContainer';
+import Header from './Header';
 import HeroGrid from './HeroGrid';
-import Graph from './OverviewGraph';
 
 
 const Home = () => {
 
     return (
         <div>
-            <Graph></Graph>
-            <HeroGrid></HeroGrid>
+            <Header />
+            <HeroGrid />
         </div>
     )
 }

@@ -1,7 +1,17 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 import { Wrapper, Content, GridLeft, GridRight, StyledDropbox, DemoButton } from './HeroGrid.styles'
 
+
+
 const HeroGrid = () => {
+
+    let navigate = useNavigate(); 
+    const routeChange = () =>{ 
+      let path = `/data`; 
+      navigate(path);
+    }
+
     return (
         <Wrapper>
             <Content>
@@ -13,7 +23,7 @@ const HeroGrid = () => {
                     <StyledDropbox>
                         <p>Drop .tlog file here!</p>
                     </StyledDropbox>
-                    <DemoButton>
+                    <DemoButton onClick={routeChange}>
                         Or try with demo data!
                     </DemoButton>
                 </GridRight>

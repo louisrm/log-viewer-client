@@ -1,51 +1,66 @@
 import React,{useState,useEffect} from 'react';
-import Plot from 'react-plotly.js';
-import Graph from '../OverviewGraph';
-
+import OverviewGraph from '../OverviewGraph';
+import { Wrapper, Content, ContentGrid, ContentLeft, ContentRight, InfoScroll, LoadingWheel } from './DataContainer.styles';
+import Summary from '../Summary';
+import StatusItem from '../StatusItem';
 
 const DataContainer = () => {
 
     const [data, setData] = useState({})
 
     useEffect(() => {
-    fetch("/members",{
-        headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-    }
-    }).then(
-        res => res.json()
-    ).then(
-        data => {
-        setData(data)
-        console.log(data)
+        fetch("/members",{
+            headers : { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         }
-    )
-    
+        }).then(
+            res => res.json()
+        ).then(
+            data => {
+            setData(data)
+            console.log(data)
+            }
+        )
     }, [])
 
-
-    return (
-    <div>
-
-        <Graph></Graph>
-
-        {(typeof data.STATUSTEXT === 'undefined') ? (
-        <p>Loading...</p> 
-        ) : (
-        Object.keys(data).map((member, i) => (
-            <p key={i}>{member}</p>
-        ))
-        )}
-    
-        {(typeof data.STATUSTEXT === 'undefined') ? (
+    const statusMessages = (typeof data.STATUSTEXT === 'undefined') ? (
         <p>Loading...</p>
         ) : (
         data.STATUSTEXT.text.map((member, i) => (
-            <p key={i}>{member}</p>
-        )))
-        }
-    </div>
+            <StatusItem 
+                key={i} 
+                time={data.STATUSTEXT.timestamp[i] - data.STATUSTEXT.timestamp[0]}
+                severity={data.STATUSTEXT.severity[i]}
+                text={member}
+            />
+    )))
+
+    const dataReady = typeof data.STATUSTEXT !== 'undefined';
+
+    return (
+        <Wrapper>
+            <Content>
+                {!dataReady && <LoadingWheel />}
+                <ContentGrid>
+                    <ContentLeft> 
+                        {dataReady && <Summary flight={data}/>}    
+                            {dataReady && <InfoScroll> 
+                                {statusMessages}
+                            </InfoScroll>}
+                    </ContentLeft>
+                    <ContentRight>
+                        {dataReady && <OverviewGraph flight={data} />}
+                        {/* <OverviewGraph flight={data} />
+                        <OverviewGraph flight={data} />
+                        <OverviewGraph flight={data} /> */}
+                        {/* map plots */}
+                    </ContentRight>
+
+                </ContentGrid>
+                    
+            </Content>
+        </Wrapper>
     )
 }
 
