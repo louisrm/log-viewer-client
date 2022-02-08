@@ -17,24 +17,17 @@ function OverviewGraph(props) {
           <p>Loading...</p> 
           ) : (
         <Plot
-          // data={[
-          //   {
-          //     x: flightData.GLOBAL_POSITION_INT.lat,
-          //     y: flightData.GLOBAL_POSITION_INT.lon,
-          //     type: "scatter2d",
-          //     mode: "lines"
-          //   }]}
           data = {[
             {
               type: "scattermapbox",
               lon: lon,
               lat: lat,
-              marker: { color: "fuchsia", size: 4 },
+              line: { color: "#ffb95e", width: 4 },
               mode: "lines"
             }
           ]}
 
-          layout={{mapbox: { style: "open-street-map", center: { lat: meanLat, lon: meanLon }, zoom: 14 }, margin: {b: 0, l: 0, r: 0, t: 0}}}          
+          layout={{mapbox: { style: "carto-positron", center: { lat: meanLat, lon: meanLon }, zoom: 14 }, margin: {b: 0, l: 0, r: 0, t: 0}}}          
         />
     )}
   </Wrapper>

@@ -60,13 +60,14 @@ export const InfoScroll = styled.div`
         }
         to {
         opacity: 1;
+        }
     }
 `
 
 export const ContentRight = styled.div`
     overflow-y: scroll;
-    justify-self: center;
-    padding: 2em;
+    justify-content: center;
+    padding: 0em 10em;
 
     ::-webkit-scrollbar {
         display: none;
