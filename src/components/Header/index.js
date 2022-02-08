@@ -1,4 +1,4 @@
-import { React, useEffect } from 'react';
+import { React } from 'react';
 
 import { Wrapper, Content, HeaderLogo, HeaderLinks } from './Header.styles';
 
@@ -16,7 +16,6 @@ function Header() {
             </Content>
         </Wrapper>
     )
-  
 };
 
 export default Header;

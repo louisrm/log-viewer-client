@@ -10,8 +10,9 @@ const DataContainer = () => {
 
     const [data, setData] = useState({})
 
+    // Fetch data from server
     useEffect(() => {
-        fetch("/members",{
+        fetch("/exampleData",{
             headers : { 
             'Content-Type': 'application/json',
             'Accept': 'application/json'

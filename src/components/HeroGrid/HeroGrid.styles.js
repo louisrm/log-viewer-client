@@ -52,18 +52,7 @@ export const GridRight = styled.div`
     gap: 1em;
 `;
 
-export const StyledDropbox = styled.div`
-    border-style: dotted;
-    border-color: var(--darkGray);
-    border-radius: 10px;
-    background: var(--medGray);
-    padding: 2em;
-    cursor: pointer;
 
-    p {
-        background: var(--medGray);
-    }
-`;
 
 export const DemoButton = styled.button`
     cursor: pointer;

@@ -8,12 +8,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 // Components
 import Home from './components/Home';
 import Data from './components/Data';
-import Footer from './components/Footer';
 import NotFound from './components/NotFound';
 
 // Styles 
 import { GlobalStyle } from './GlobalStyle'
-import DataContainer from './components/DataContainer';
 
 function App() {
   return(
