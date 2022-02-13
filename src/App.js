@@ -1,6 +1,4 @@
-import React from 'react';
-// import Plot from 'react-plotly.js';
-
+import { React, useState } from 'react';
 
 // Routing 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -14,11 +12,15 @@ import NotFound from './components/NotFound';
 import { GlobalStyle } from './GlobalStyle'
 
 function App() {
+
+  const [flightData, setFlightData] = useState({})
+  const [filename, setFilename] = useState('Demo Flight Data')
+
   return(
     <Router>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/data' element={<Data />} />
+        <Route path='/' element={<Home setFlightData={setFlightData} setFilename={setFilename}/>} />
+        <Route path='/data' element={<Data flightData={flightData} filename={filename}/>} />
         <Route path='/*' element={<NotFound />} />
       </Routes>
       <GlobalStyle />

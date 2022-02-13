@@ -3,12 +3,12 @@ import DataContainer from './DataContainer';
 import Header from './Header';
 
 
-const Data = () => {
+const Data = ({ flightData, filename }) => {
 
     return (
         <div>
             <Header />
-            <DataContainer />
+            <DataContainer flightData={flightData} filename={filename} />
         </div>
     )
 }

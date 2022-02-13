@@ -3,12 +3,12 @@ import Header from './Header';
 import HeroGrid from './HeroGrid';
 
 
-const Home = () => {
+const Home = ({ setFlightData, setFilename }) => {
 
     return (
         <div>
             <Header />
-            <HeroGrid />
+            <HeroGrid setFlightData={setFlightData} setFilename={setFilename}/>
         </div>
     )
 }

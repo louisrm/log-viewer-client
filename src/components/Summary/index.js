@@ -27,7 +27,7 @@ const Summary = (props) => {
     return (
         <Wrapper>
             <Content>
-                <h2>Demo Flight Log</h2>
+                <h2>{props.filename}</h2>
                 <div>
                     <p>{`Duration: ${time}`}</p>
                 </div>

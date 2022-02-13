@@ -1,37 +1,44 @@
-import { React, useEffect } from 'react';
+import { React , useCallback } from 'react';
 import {useDropzone} from 'react-dropzone';
 import { StyledDropbox } from './DropBox.styles';
 
-function DropBox(props) {
-  const {acceptedFiles, getRootProps, getInputProps} = useDropzone();
+function DropBox({ setFlightData, routeChange, setFilename }) {
 
-    // useEffect(() => {
+  const onDrop = useCallback(acceptedFiles => {
+    routeChange()
 
-    //     console.log(acceptedFiles)
-    //     const formData = new FormData()
-    //     formData.append(acceptedFiles[0])
+    console.log(acceptedFiles)
+    const formData = new FormData()
+    const firstAcceptedFile = acceptedFiles[0]
+    setFilename(firstAcceptedFile.name.substring(0, firstAcceptedFile.name.length - 5))
+    formData.append('file', firstAcceptedFile)
 
-    //     fetch('/customData', {
-    //         method: 'POST',
-    //         body: formData
-    //     })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         console.log(data)
-    //     })
-    //     .catch(error => {
-    //         console.error(error)
-    //     })
-        
+    fetch('/customData', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(JSON.parse(data))
+        setFlightData(JSON.parse(data))
+    })
+    .catch(error => {
+        console.error(error)
+    })
 
-    // }, [acceptedFiles])
-    
+  }, [])
+
+  const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
 
   return (
-    <StyledDropbox className="container">
-      <div {...getRootProps({className: 'dropzone'})}>
+    <StyledDropbox>
+      <div {...getRootProps()}>
         <input {...getInputProps()} />
-        <p>Drag 'n' drop .tlog file here</p>
+        {
+          isDragActive ?
+            <p>Drop the files here ...</p> :
+            <p>Drag 'n' drop .tlog file here</p>
+        }
       </div>
     </StyledDropbox>
   );

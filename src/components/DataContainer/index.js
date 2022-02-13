@@ -6,26 +6,13 @@ import GenericPlot from '../GenericPlot';
 import { Wrapper, Content, ContentGrid, ContentLeft, ContentRight, InfoScroll, LoadingWheel } from './DataContainer.styles';
 
 
-const DataContainer = () => {
+const DataContainer = ({ flightData, filename }) => {
 
     const [data, setData] = useState({})
 
-    // Fetch data from server
     useEffect(() => {
-        fetch("/exampleData",{
-            headers : { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        }
-        }).then(
-            res => res.json()
-        ).then(
-            data => {
-            setData(data)
-            console.log(data)
-            }
-        )
-    }, [])
+        setData(flightData)
+    },[flightData])
 
     const statusMessages = (typeof data.STATUSTEXT === 'undefined') ? (
         <p>No status messages</p>
@@ -49,7 +36,7 @@ const DataContainer = () => {
                 {!dataReady && <LoadingWheel />}
                 <ContentGrid>
                     <ContentLeft> 
-                        {dataReady && <Summary flight={data}/>}    
+                        {dataReady && <Summary flight={data} filename={filename}/>}    
                             {dataReady && <InfoScroll> 
                                 {statusMessages}
                             </InfoScroll>}
