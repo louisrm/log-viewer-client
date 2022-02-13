@@ -83,6 +83,7 @@ export const Summary = styled.div`
         }
         to {
         opacity: 1;
+        }
     }
 `
 

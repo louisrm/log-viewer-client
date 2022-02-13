@@ -6,10 +6,11 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     @keyframes animate {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
 `

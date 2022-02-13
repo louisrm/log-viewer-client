@@ -1,9 +1,9 @@
-import React from "react";
-import Plot from "react-plotly.js";
-import { Wrapper } from "./OverviewGraph.styles";
+import React from "react"
+import Plot from "react-plotly.js"
+import { Wrapper } from "./OverviewGraph.styles"
 
 function OverviewGraph(props) {
-  let flightData = props.flight;
+  let flightData = props.flight
 
   let lon = flightData.GLOBAL_POSITION_INT.lon.map(v => v / Math.pow(10,7))
   let lat = flightData.GLOBAL_POSITION_INT.lat.map(v => v / Math.pow(10,7))

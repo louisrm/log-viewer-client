@@ -1,9 +1,9 @@
-import React,{useState,useEffect} from 'react';
-import OverviewGraph from '../OverviewGraph';
-import Summary from '../Summary';
-import StatusItem from '../StatusItem';
-import GenericPlot from '../GenericPlot';
-import { Wrapper, Content, ContentGrid, ContentLeft, ContentRight, InfoScroll, LoadingWheel } from './DataContainer.styles';
+import React,{useState,useEffect} from 'react'
+import OverviewGraph from '../OverviewGraph'
+import Summary from '../Summary'
+import StatusItem from '../StatusItem'
+import GenericPlot from '../GenericPlot'
+import { Wrapper, Content, ContentGrid, ContentLeft, ContentRight, InfoScroll, LoadingWheel } from './DataContainer.styles'
 
 
 const DataContainer = ({ flightData, filename }) => {
@@ -27,8 +27,7 @@ const DataContainer = ({ flightData, filename }) => {
     )))
 
     const colorList = ['#ea96a3', '#6daee2', '#4aae8a']
-
-    const dataReady = typeof data.STATUSTEXT !== 'undefined';
+    const dataReady = typeof data.STATUSTEXT !== 'undefined'
 
     return (
         <Wrapper>

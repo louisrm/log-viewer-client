@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrapper, Content, Time, Severity, Text } from './StatusItem.styles';
+import { Wrapper, Content, Time, Severity, Text } from './StatusItem.styles'
 
 const StatusItem = ({time, severity, text}) => {
 
@@ -16,20 +16,20 @@ const StatusItem = ({time, severity, text}) => {
     // should be a hook
     function getTimeString(duration) {   
         // Hours, minutes and seconds
-        var hrs = ~~(duration / 3600);
-        var mins = ~~((duration % 3600) / 60);
-        var secs = ~~duration % 60;
+        const hrs = ~~(duration / 3600)
+        const mins = ~~((duration % 3600) / 60)
+        const secs = ~~duration % 60
 
         // Output like "1:01" or "4:03:59" or "123:03:59"
-        var ret = "";
+        let ret = ""
 
         if (hrs > 0) {
-            ret += "" + hrs + ":" + (mins < 10 ? "0" : "");
+            ret += "" + hrs + ":" + (mins < 10 ? "0" : "")
         }
 
-        ret += "" + mins + ":" + (secs < 10 ? "0" : "");
-        ret += "" + secs;
-        return ret;
+        ret += "" + mins + ":" + (secs < 10 ? "0" : "")
+        ret += "" + secs
+        return ret
     }
 
 
@@ -44,4 +44,4 @@ const StatusItem = ({time, severity, text}) => {
     )
 }
 
-export default StatusItem;
+export default StatusItem
