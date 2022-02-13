@@ -1,6 +1,6 @@
-import React from "react";
-import Plot from "react-plotly.js";
-import { Wrapper, Content } from "./GenericPlot.styles";
+import React from "react"
+import Plot from "react-plotly.js"
+import { Wrapper, Content } from "./GenericPlot.styles"
 
 function GenericPlot({dataToPlot, axes}) {
     
