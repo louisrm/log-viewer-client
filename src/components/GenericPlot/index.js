@@ -28,4 +28,4 @@ function GenericPlot({dataToPlot, axes}) {
     )
 }
 
-export default GenericPlot;
+export default GenericPlot

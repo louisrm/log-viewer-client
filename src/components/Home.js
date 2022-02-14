@@ -1,6 +1,6 @@
-import React,{useState,useEffect} from 'react';
-import Header from './Header';
-import HeroGrid from './HeroGrid';
+import React from 'react'
+import Header from './Header'
+import HeroGrid from './HeroGrid'
 
 
 const Home = ({ setFlightData, setFilename }) => {
@@ -13,4 +13,4 @@ const Home = ({ setFlightData, setFilename }) => {
     )
 }
 
-export default Home;
+export default Home

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Wrapper = styled.div`
     display: flex;
@@ -37,5 +37,6 @@ export const HeaderLogo = styled.a`
         }
         to {
         opacity: 1;
+        }
     }
 `

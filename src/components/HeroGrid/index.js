@@ -48,4 +48,4 @@ const HeroGrid = ({ setFlightData, setFilename }) => {
     )
 }
 
-export default HeroGrid;
+export default HeroGrid

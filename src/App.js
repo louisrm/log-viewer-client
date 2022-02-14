@@ -1,12 +1,12 @@
-import { React, useState } from 'react';
+import { React, useState } from 'react'
 
 // Routing 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 // Components
-import Home from './components/Home';
-import Data from './components/Data';
-import NotFound from './components/NotFound';
+import Home from './components/Home'
+import Data from './components/Data'
+import NotFound from './components/NotFound'
 
 // Styles 
 import { GlobalStyle } from './GlobalStyle'

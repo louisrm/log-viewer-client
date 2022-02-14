@@ -43,7 +43,7 @@ const DataContainer = ({ flightData, filename }) => {
                     <ContentRight>
                         {dataReady && <OverviewGraph flight={data} />}
 
-                        {dataReady && <GenericPlot 
+                        {(dataReady && data.ALTITUDE) && <GenericPlot 
                             dataToPlot={[{
                                 type: 'scatter',
                                 x: data.ALTITUDE.timestamp.map(v => v - data.ALTITUDE.timestamp[0]),
@@ -56,7 +56,7 @@ const DataContainer = ({ flightData, filename }) => {
                             axes={{x:"Time (s)", y: "Altitude (m)"}}
                         />}
 
-                        {dataReady && <GenericPlot 
+                        {(dataReady && data.VFR_HUD) && <GenericPlot 
                             dataToPlot={[{
                                 type: 'scatter',
                                 x: data.VFR_HUD.timestamp.map(v => v - data.VFR_HUD.timestamp[0]),
@@ -76,7 +76,7 @@ const DataContainer = ({ flightData, filename }) => {
                             axes={{x:"Time (s)", y: "Speed (m/s)"}}
                         />}
 
-                        {dataReady && <GenericPlot 
+                        {(dataReady && data.ATTITUDE) && <GenericPlot 
                             dataToPlot={[{
                                 type: 'scatter',
                                 x: data.ATTITUDE.timestamp.map(v => v - data.ATTITUDE.timestamp[0]),
@@ -104,7 +104,7 @@ const DataContainer = ({ flightData, filename }) => {
                             axes={{x:"Time (s)", y: "Angle Rate (rad/s)"}}
                         />}
 
-                        {dataReady && <GenericPlot 
+                        {(dataReady && data.SYS_STATUS) && <GenericPlot 
                             dataToPlot={[{
                                 type: 'scatter',
                                 x: data.SYS_STATUS.timestamp.map(v => v - data.SYS_STATUS.timestamp[0]),
@@ -116,7 +116,7 @@ const DataContainer = ({ flightData, filename }) => {
                             axes={{x:"Time (s)", y: "Battery Remaining (%)"}}
                         />}
 
-                        {dataReady && <GenericPlot 
+                        {(dataReady && data.SYS_STATUS) && <GenericPlot 
                             dataToPlot={[{
                                 type: 'scatter',
                                 x: data.SYS_STATUS.timestamp.map(v => v - data.SYS_STATUS.timestamp[0]),
@@ -135,4 +135,4 @@ const DataContainer = ({ flightData, filename }) => {
     )
 }
 
-export default DataContainer;
+export default DataContainer

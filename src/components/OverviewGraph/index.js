@@ -35,4 +35,4 @@ function OverviewGraph(props) {
 }
 
 
-export default OverviewGraph;
+export default OverviewGraph

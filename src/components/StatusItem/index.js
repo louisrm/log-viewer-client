@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { Wrapper, Content, Time, Severity, Text } from './StatusItem.styles'
 
 const StatusItem = ({time, severity, text}) => {

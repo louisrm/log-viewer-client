@@ -36,4 +36,4 @@ const Summary = (props) => {
     )
 }
 
-export default Summary;
+export default Summary

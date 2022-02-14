@@ -1,6 +1,6 @@
-import React from 'react';
-import DataContainer from './DataContainer';
-import Header from './Header';
+import React from 'react'
+import DataContainer from './DataContainer'
+import Header from './Header'
 
 
 const Data = ({ flightData, filename }) => {
@@ -13,4 +13,4 @@ const Data = ({ flightData, filename }) => {
     )
 }
 
-export default Data;
+export default Data
