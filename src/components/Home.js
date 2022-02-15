@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from './Header'
-import HeroGrid from './HeroGrid'
+import Header from './header'
+import HeroGrid from './hero-grid'
 
 
 const Home = ({ setFlightData, setFilename }) => {

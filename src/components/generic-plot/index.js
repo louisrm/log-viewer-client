@@ -1,6 +1,6 @@
 import React from "react"
 import Plot from "react-plotly.js"
-import { Wrapper, Content } from "./GenericPlot.styles"
+import { Wrapper, Content } from "./generic-plot.styles"
 
 function GenericPlot({dataToPlot, axes}) {
     

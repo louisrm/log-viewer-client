@@ -1,6 +1,6 @@
 import React from 'react'
-import DataContainer from './DataContainer'
-import Header from './Header'
+import DataContainer from './data-container'
+import Header from './header'
 
 
 const Data = ({ flightData, filename }) => {

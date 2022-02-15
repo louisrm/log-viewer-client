@@ -1,6 +1,6 @@
 import { React , useCallback } from 'react'
 import {useDropzone} from 'react-dropzone'
-import { StyledDropbox } from './DropBox.styles'
+import { StyledDropbox } from './drop-box.styles'
 
 function DropBox({ setFlightData, routeChange, setFilename }) {
 

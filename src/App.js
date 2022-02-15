@@ -4,12 +4,12 @@ import { React, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 // Components
-import Home from './components/Home'
-import Data from './components/Data'
-import NotFound from './components/NotFound'
+import Home from './components/home'
+import Data from './components/data'
+import NotFound from './components/not-found'
 
 // Styles 
-import { GlobalStyle } from './GlobalStyle'
+import { GlobalStyle } from './global-style'
 
 function App() {
 

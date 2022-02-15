@@ -1,5 +1,5 @@
 import React from 'react'
-import { Wrapper, Content, Time, Severity, Text } from './StatusItem.styles'
+import { Wrapper, Content, Time, Severity, Text } from './status-item.styles'
 
 const StatusItem = ({time, severity, text}) => {
 

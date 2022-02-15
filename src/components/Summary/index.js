@@ -1,5 +1,5 @@
 import React from 'react'
-import { Wrapper, Content } from './Summary.styles'
+import { Wrapper, Content } from './summary.styles'
 
 const Summary = (props) => {
 

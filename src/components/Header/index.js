@@ -1,5 +1,5 @@
 import { React } from 'react'
-import { Wrapper, Content, HeaderLogo, HeaderLinks } from './Header.styles'
+import { Wrapper, Content, HeaderLogo, HeaderLinks } from './header.styles'
 
 function Header() {
     let pathname = window.location.pathname

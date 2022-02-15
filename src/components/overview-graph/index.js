@@ -1,6 +1,6 @@
 import React from "react"
 import Plot from "react-plotly.js"
-import { Wrapper } from "./OverviewGraph.styles"
+import { Wrapper } from "./overview-graph.styles"
 
 function OverviewGraph(props) {
   let flightData = props.flight

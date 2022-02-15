@@ -1,9 +1,9 @@
 import React,{useState,useEffect} from 'react'
-import OverviewGraph from '../OverviewGraph'
-import Summary from '../Summary'
-import StatusItem from '../StatusItem'
-import GenericPlot from '../GenericPlot'
-import { Wrapper, Content, ContentGrid, ContentLeft, ContentRight, InfoScroll, LoadingWheel } from './DataContainer.styles'
+import OverviewGraph from '../overview-graph'
+import Summary from '../summary'
+import StatusItem from '../status-item'
+import GenericPlot from '../generic-plot'
+import { Wrapper, Content, ContentGrid, ContentLeft, ContentRight, InfoScroll, LoadingWheel } from './data-container.styles'
 
 
 const DataContainer = ({ flightData, filename }) => {

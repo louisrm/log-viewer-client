@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom"
-import DropBox from '../DropBox'
-import { Wrapper, Content, GridLeft, GridRight, DemoButton } from './HeroGrid.styles'
+import DropBox from '../drop-box'
+import { Wrapper, Content, GridLeft, GridRight, DemoButton } from './hero-grid.styles'
 
 const HeroGrid = ({ setFlightData, setFilename }) => {
 
