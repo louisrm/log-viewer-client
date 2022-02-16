@@ -27,7 +27,16 @@ function OverviewGraph(props) {
             }
           ]}
 
-          layout={{mapbox: { style: "carto-positron", center: { lat: meanLat, lon: meanLon }, zoom: 14 }, margin: {b: 0, l: 0, r: 0, t: 0}}}          
+          layout={{mapbox: { 
+                      style: "carto-positron", 
+                      center: { 
+                        lat: meanLat, 
+                        lon: meanLon 
+                      },
+                      zoom: 14 
+                    },
+                    margin: {b: 0, l: 0, r: 0, t: 0}
+                  }}          
         />
     )}
   </Wrapper>
